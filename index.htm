@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SecureVote Hub</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+	<link rel="shortcut icon" type="image/png" href="Svote2_upscayl_4x_RealESRGAN_General_x4_v3-removebg-preview2.png">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://db.onlinewebfonts.com/c/57e74ee407bf5977010a4b1a4d913b0b?family=Kamerik+105+W00+Heavy"
+		rel="stylesheet">
+
+	<style>
+		@font-face {
+			font-family: 'Larsseit Bold';
+			font-style: normal;
+			font-weight: normal;
+			src: local('Larsseit Bold'), url('LarsseitBold.woff') format('woff');
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Figtree', sans-serif;
+			line-height: 1.5;
+		}
+
+		body {
+			overflow-y: scroll;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+		}
+
+		/* Customize the scrollbar thumb for browsers that don't support hiding it */
+		::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: transparent;
+		}
+
+		body {
+			color: #FFFFFF;
+		}
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding-right: 5%;
+			padding-left: 5%;
+			margin: auto;
+			background-color: #001F3F;
+		}
+
+
+		a img {
+			max-width: 100px;
+			height: auto;
+			color: #FFFFFF;
+
+		}
+
+		nav a {
+			font-family: "PT Sans Caption", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		nav ul a {
+			text-decoration: none;
+			color: #FFFFFF;
+		}
+
+		.btn {
+			color: white;
+			background-color: #2ECC40;
+			display: inline-block;
+			padding: .75rem 1.5rem;
+			border-radius: 1rem;
+			border: 1px solid #AAAAAA;
+		}
+
+		/* Air */
+
+		.menu {
+			border-radius: 1rem;
+			padding: .2rem .25rem;
+			transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
+		}
+
+		.menu:hover {
+			background-color: white;
+			color: #151618;
+			border-color: #AAAAAA;
+			transform: scale(1.1);
+		}
+
+		.btn {
+			transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
+		}
+
+		.btn:hover {
+			background-color: white;
+			color: #151618;
+			border-color: #AAAAAA;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 30px auto;
+			padding: 20px;
+			text-align: center;
+			background-color: #f4f8fd;
+		}
+
+		.welcome-message {
+			font-size: 3rem;
+			margin-bottom: 20px;
+			color: #333;
+			font-style: bold;
+			font-family: "Kamerik 105 W00 Heavy";
+		}
+
+		.image-container {
+			max-width: 1080px;
+			margin: 20px auto;
+		}
+
+		.image-container img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.university-details {
+			font-size: 1.2rem;
+			margin-top: 20px;
+			color: #666;
+		}
+
+		.container-2 {
+			max-width: 800px;
+			margin: 30px auto;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.container-2 h2 {
+			font-size: 32px;
+			font-weight: bold;
+			margin-bottom: 20px;
+			text-align: center;
+			color: #000000;
+		}
+
+		.container-2 p {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+			color: #151618;
+		}
+
+		.container-3 {
+			background-color: #404040;
+			padding: 50px;
+			text-align: center;
+
+		}
+
+		.container-3 h3 {
+			font-size: 28px;
+			color: #ffffff;
+			font-family: 'poppins ', sans-serif;
+		}
+
+		.container-3 p {
+			font-size: 15px;
+			padding: 10px 0px;
+			color: #ffffff;
+			font-family: 'poppins ', sans-serif;
+		}
+
+		.container-3 form {
+			display: flex;
+			justify-content: center;
+		}
+
+		.container-3 input[type="email"] {
+			width: 300px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+			font-size: 18px;
+			margin-right: 20px;
+		}
+
+		.container-3 input[type="submit"] {
+			padding: 10px 20px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+		.container-3 input[type="submit"]:hover {
+			background-color: #444;
+		}
+
+		@media screen and (max-width: 768px) {
+			.container-3 {
+				padding: 30px;
+			}
+
+			.container-3 input[type="email"] {
+				width: 100%;
+			}
+		}
+
+		.footer {
+			background-color: #001F3F;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			margin: 10px 0px;
+		}
+
+		.footer p {
+			margin: 0;
+			font-size: 14px;
+		}
+
+		.footer ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.footer li {
+			margin: 0 10px;
+		}
+
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 14px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li>
+					<a href="/"><img src="Svote2_upscayl_4x_RealESRGAN_General_x4_v3-removebg-preview2.png"
+							alt="Logo"></a>
+				</li>
+				<li>
+					<h1><a href="/">SecureVote <span style="color: #FFD700;">Hub</span></a></h1>
+
+				</li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				<li><a href="#" class="menu">Home</a></li>
+				<!-- <li><a href="#">Company</a></li> -->
+				<li><a href="#" class="menu">Blog</a></li>
+				<!-- <li><a href="#">Careers</a></li> -->
+				<li><a href="#" class="menu">Contact</a></li>
+				<li><a href="#" class="btn">Login</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="container">
+		<h1 class="welcome-message">Welcome to SecureVote Hub</h1>
+		<p class="university-details">SecureVote Hub is at the forefront of transforming traditional voting systems into
+			secure, transparent, and efficient processes. Embrace the future of democracy with our cutting-edge
+			blockchain-based voting platform.</p>
+
+		<div class="image-container">
+			<img src="computer-network-computer-security.jpg" alt="FU FU Image">
+		</div>
+	</div>
+
+	<div class="container-2">
+		<h2>SecureVote Hub: The Blockchain Voting Solution</h2>
+		<p>SecureVote Hub is a revolutionary blockchain voting system that prioritizes transparency, security, and
+			accessibility. Our platform offers a range of key features designed to ensure a trustworthy and efficient
+			voting experience for all.</p>
+
+		<h2>Trust Through Transparency</h2>
+		<p>Our blockchain technology ensures an immutable and transparent record of every vote cast, fostering trust in
+			the electoral process. With SecureVote Hub, voters can have confidence that their voices are being heard
+			accurately and fairly.
+		</p>
+		<h2>Tamper-Proof Voting</h2>
+		<p>Say goodbye to concerns about tampering or fraud. SecureVote Hub utilizes the power of blockchain to
+			guarantee the integrity of each vote, providing a secure and reliable voting experience. Our platform's
+			transparency ensures that any attempt at tampering would be immediately apparent, providing a tamper-proof
+			voting experience.
+		</p>
+		<h2>Accessibility for All</h2>
+		<p>We prioritize inclusivity with an accessible and user-friendly interface. SecureVote Hub is designed to
+			accommodate voters of all abilities, making the democratic process truly for everyone. Our platform's
+			easy-to-use interface ensures that all voters can participate in the process with ease.
+		</p>
+		<h2>Candidate Accountability</h2>
+		<p>Candidates and voters alike can have confidence in the accuracy of election results. Our blockchain ensures a
+			verifiable and auditable trail, promoting accountability throughout the electoral journey. With SecureVote
+			Hub, every vote counts, and every candidate can be held accountable for their actions.
+		</p>
+		<h2>Swift and Efficient Elections</h2>
+		<p>With SecureVote Hub, experience faster and more efficient elections. The decentralized nature of blockchain
+			eliminates bureaucratic delays, allowing for timely and accurate results. Our platform's speed and
+			efficiency ensure that every voter's voice is heard in a timely manner.
+		</p>
+		<h1><span style="color: #000000;">Why Choose SecureVote Hub?</span></h1>
+		<h2>Security First</h2>
+		<p>Your vote is your voice. SecureVote Hub prioritizes the highest standards of security to safeguard the
+			democratic process. Our platform's blockchain technology ensures that every vote is secure, while our
+			encryption methods protect voter data from unauthorized access.
+		</p>
+		<h2>Innovation for Democracy</h2>
+		<p>We're not just a voting system; we're a catalyst for democratic innovation. Join us in shaping the future of
+			fair and secure elections. Our platform's cutting-edge technology is designed to ensure that every vote
+			counts, while our commitment to democratic innovation ensures that we're always looking for new ways to
+			improve the voting experience.
+		</p>
+		<h2>Community-Centric</h2>
+		<p>SecureVote Hub is driven by a commitment to serving communities. We believe in empowering every voice to
+			create a stronger, more resilient democracy. With SecureVote Hub, voters can have confidence that their
+			voices are being heard, and that their community is at the heart of everything we do.
+		</p>
+		<h2>Get Started Today</h2>
+		<p>Ready to experience the future of voting? Join SecureVote Hub and be part of a democratic revolution. Sign up
+			now and let your voice be heard securely and transparently. Together, we can create a stronger, more
+			resilient democracy for all.
+		</p>
+
+		<div class="image-container">
+			<img src="finger-pressing-vote-green-button-keyboard-online-elections.jpg" alt="">
+		</div>
+
+	</div>
+
+	<div class="container-3">
+		<h3>Subscribe to Newsletter</h3>
+		<p>Enter your email address to register to our newsletter subscription!</p>
+		<form>
+			<input type="email" placeholder="Email">
+			<input type="submit" value="Send Message">
+		</form>
+	</div>
+
+	<div class="footer">
+		<ul>
+			<li><a href="#">Privacy Policy</a></li>
+			<li><a href="#">Terms of Use</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</div>
+
+</body>
+
+</html>
